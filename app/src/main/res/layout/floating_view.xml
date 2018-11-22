@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:id="@+id/relativeLayoutParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+
+        <!-- this is the collapsed layout -->
+        <androidx.cardview.widget.CardView
+                android:id="@+id/layoutCollapsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                    android:layout_width="416dp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@android:color/white"
+                    android:visibility="visible">
+
+                <TextView
+                        android:id="@+id/notications_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="2 Notifications"
+                        android:textSize="16sp"
+                        android:drawableEnd="@drawable/ic_arrow_down" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- this is the expanded layout -->
+        <LinearLayout android:id="@+id/layoutExpanded"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:visibility="gone"
+                      android:gravity="end"
+                      android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                        android:layout_width="416dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@android:color/white">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/notications_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:id="@+id/notications_number_expanded"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            android:text="2 Notifications"
+                            android:textSize="16sp"
+                            android:drawableEnd="@drawable/ic_arrow_up" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView android:id="@+id/clear_list"
+                    android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:padding="8dp"
+                      android:textSize="16sp"
+                      android:textAllCaps="true"
+                      android:text="Clear All"/>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
